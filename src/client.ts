@@ -6,13 +6,14 @@ export const createClient = <T extends Router>(router: T) => {
             key: K,
             input: InferInput<T[K]>
         ): Promise<InferOutput<T[K]>> => {
-            const response = await fetch('/api/${String(key)}', {
+            const url = `http://localhost:3000/api/${String(key)}`;
+            console.log("Fetching URL:", url);
+            const response = await fetch(url, {
                 method: "POST",
-                headers: { "content-Type": "application/json" },
-                body: JSON.stringify(input), 
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(input),
             });
-
             return response.json();
-        }
+        },
     };
 };

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "dev": "ts-node src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,7 +12,12 @@
   "description": "",
   "dependencies": {
     "@types/express": "^5.0.0",
+    "arg": "^5.0.2",
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "typescript": "^5.8.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17"
   }
 }
