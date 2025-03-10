@@ -7,8 +7,8 @@ export const createServer = <T extends Router>(router: T) => {
     app.use(express.json());
     app.use(cors());
 
-    for (const Key in router) {
-        app.post('/api/${key}' , (req, res) => {
+    for (const Key in router) { 
+        app.post(`/api/${Key}` , (req, res) => {
             const procedure = router[Key as keyof T];
             try {
                 const output = procedure(req.body);
